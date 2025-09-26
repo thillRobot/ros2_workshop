@@ -17,9 +17,13 @@ find_package(std_msgs REQUIRED)
 add_executable(hello_world src/hello_world.cpp)
 target_link_libraries(hello_world PUBLIC rclcpp::rclcpp ${std_msgs_TARGETS})
 
+add_executable(simple_publisher src/simple_publisher.cpp)
+target_link_libraries(simple_publisher PUBLIC rclcpp::rclcpp ${std_msgs_TARGETS})
+
 # add name of each executable to list of targets
 install(TARGETS 
 	hello_world
+	simple_publisher
   DESTINATION lib/${PROJECT_NAME})
 
 
