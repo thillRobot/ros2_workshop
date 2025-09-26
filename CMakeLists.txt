@@ -7,18 +7,21 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_executable(ros2_demo src/ros2_demo.cpp)
-target_include_directories(ros2_demo PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include/${PROJECT_NAME}>)
-target_compile_features(ros2_demo PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+# add_executable and target_link_libraries for each c++ node to compile
+add_executable(hello_world src/hello_world.cpp)
+target_link_libraries(hello_world PUBLIC rclcpp::rclcpp ${std_msgs_TARGETS})
 
-install(TARGETS ros2_demo
+# add name of each executable to list of targets
+install(TARGETS 
+	hello_world
   DESTINATION lib/${PROJECT_NAME})
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
