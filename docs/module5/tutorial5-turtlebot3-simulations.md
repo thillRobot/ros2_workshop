@@ -1,4 +1,4 @@
-# tutorial5 - turtlebot3-simultations - ros2_workshop
+# tutorial5 - turtlebot3-simulations - ros2_workshop
 
 ## Overview
 ROS Assignment 5 - Complete Tutorial 5: Turtlebot3 Simulations 
