@@ -35,11 +35,12 @@ echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-
 Test the turtlebot3 simulation 
 ```
   ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py
 ```
+The Gazebo window should open and the walls of a house are shown.
+![tutorial5-turtlebot3-simulations](images/tutorial5-figure1.png) 
 
 Open a new terminal (or tab), start a keyboard node to drive robot
 ```
@@ -49,8 +50,7 @@ Open a new terminal (or tab), start a keyboard node to drive robot
 Depending on the system, the reponse to commands may be slow and the display may be difficult to adjust due to lag. To make the simulator run smoothly, consider using the following settings.
 
 If the simulator is usable, drive the robot into the house using the keyboard. Take a screen capture of the Gazebo window showing the robot in the house, include the terminal with the keyboard node in the screen caputure image. 
-![tutorial5-turtlebot3-simulations](images/tutorial5-figure1.png) 
-
+![tutorial5-turtlebot3-simulations](images/tutorial5-figure2.png) 
 
 ## Deliverable 
 Write a brief summary (1-2 paragraphs) on what you have accomplished and what you struggled with. Include an image that shows both talker and listener nodes running simultaneously. Submit your work as a single .pdf document
