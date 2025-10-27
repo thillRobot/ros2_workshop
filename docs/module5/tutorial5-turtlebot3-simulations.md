@@ -53,4 +53,4 @@ If the simulator is usable, drive the robot into the house using the keyboard. T
 ![tutorial5-turtlebot3-simulations](images/tutorial5-figure2.png) 
 
 ## Deliverable 
-Write a brief summary (1-2 paragraphs) on what you have accomplished and what you struggled with. Include an image that shows both talker and listener nodes running simultaneously. Submit your work as a single .pdf document
+Write a brief summary (1-2 paragraphs) on what you have accomplished and what you struggled with. Include an image that shows both the robot in the house and the keyboard terminal. Submit your work as a single .pdf document
