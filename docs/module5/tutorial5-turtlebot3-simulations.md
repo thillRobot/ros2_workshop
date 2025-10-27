@@ -10,6 +10,7 @@ Follow the video tutorial for installing Gazebo Ionic and Turtlebot3 Simulations
 The following commands were entered in the video tutorial5 
 
 Install Gazebo Ionic (recommended version for ROS Kilted) from osrf binaries
+GAZEBO MAY BE PREVIOUSLY INSTALLED, TRY SKIPPING THIS STEP
 ```
   sudo apt-get update
   sudo apt-get install curl lsb-release gnupg
@@ -28,20 +29,27 @@ Install Turtlebot3 Simulations package from ros2 binaries
   sudo apt update
   sudo apt install ros-kilted-turtlebot3 ros-kilted-turtlebot3-msgs ros-kilted-turtlebot3-simulations
 ```
+Set the robot model, edit ~/.bashrc to change
+```
+echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
+source ~/.bashrc
+```
+
 
 Test the turtlebot3 simulation 
 ```
-  export TURTLEBOT3_MODEL=burger
-  ros2 launch turtlebot3_gazebo empty_world.launch.py
+  ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py
 ```
 
 Open a new terminal (or tab), start a keyboard node to drive robot
 ```
-  export TURTLEBOT3_MODEL=burger
-  ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
-
+  ros2 run turtlebot3_teleop teleop_keyboard
 ```
 
+Depending on the system, the reponse to commands may be slow and the display may be difficult to adjust due to lag. To make the simulator run smoothly, consider using the following settings.
+
+If the simulator is usable, drive the robot into the house using the keyboard. Take a screen capture of the Gazebo window showing the robot in the house, include the terminal with the keyboard node in the screen caputure image. 
+![tutorial5-turtlebot3-simulations](images/tutorial5-figure1.png) 
 
 
 ## Deliverable 
