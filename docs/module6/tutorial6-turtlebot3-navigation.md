@@ -55,9 +55,9 @@ The rviz window will open, and the robot will be shown in the map. It may not be
 
 If the robot is localized, it should be ready to receive goals. Use the green arrow 'nav2 goal' near the top of rviz to send a goal. Click a goal location in the map and drag the arrow to choose a goal heading.
 
-The robot should plan a path and begin navigating to the goal.
+The robot should plan a path and begin navigating to the goal. Try at least one of two goals and take document screeshots for documentaion.
 
-Adjust settings for performance
+### Performance Settings
 Depending on the system, the reponse to commands may be slow and the display may be difficult to adjust due to lag. To make the simulator run smoothly, consider using the following settings.
 
  - If using a VM and the screen is flashing, shutdown the VM and uncheck "accelerate 3D graphics" or similar setting in the VM display settings. Increase the VM RAM to max reccomended leaving enough to run the host machine.
@@ -66,8 +66,7 @@ Depending on the system, the reponse to commands may be slow and the display may
 
  - In the entity tree to the bottom right, click on 'Sun' and expand the 'light' menu above. Scroll down in the menu or drag the split screen down and disable 'Cast shadows'.
 
-If the simulator is usable, drive the robot into the house using the keyboard. Take a screen capture of the Gazebo window showing the robot in the house, include the terminal with the keyboard node in the screen caputure image. 
 ![tutorial5-turtlebot3-simulations](images/tutorial5-figure2.png) 
 
 ## Deliverable 
-Write a brief summary (1-2 paragraphs) on what you have accomplished and what you struggled with. Include an image that shows both the robot in the house and the keyboard terminal. Submit your work as a single .pdf document
+Write a brief summary (1-2 paragraphs) on what you have accomplished and what you struggled with. Include screenshots showing the Gazebo and RVIZ windows for both part 1 and part 2, and the .pgm image of the map created in part 1. Submit your work as a single .pdf document.
