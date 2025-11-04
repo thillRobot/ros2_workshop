@@ -47,7 +47,14 @@ Open a new terminal (or tab), start a keyboard node to drive robot
   ros2 run turtlebot3_teleop teleop_keyboard
 ```
 
+Adjust settings for performance
 Depending on the system, the reponse to commands may be slow and the display may be difficult to adjust due to lag. To make the simulator run smoothly, consider using the following settings.
+
+ - If using a VM and the screen is flashing, shutdown the VM and uncheck "accelerate 3D graphics" or similar setting in the VM display settings. Increase the VM RAM to max reccomended leaving enough to run the host machine.
+
+ - When the Gazebo window first opens, expand 'physics' in menu to the right and adjust the step-size up. Try 0.005 or 0.01 instead of the default 0.001
+
+ - In the entity tree to the bottom right, click on 'Sun' and expand the 'light' menu above. Scroll down in the menu or drag the split screen down and disable 'Cast shadows'.
 
 If the simulator is usable, drive the robot into the house using the keyboard. Take a screen capture of the Gazebo window showing the robot in the house, include the terminal with the keyboard node in the screen caputure image. 
 ![tutorial5-turtlebot3-simulations](images/tutorial5-figure2.png) 
