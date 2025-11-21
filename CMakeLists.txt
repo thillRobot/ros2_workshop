@@ -10,6 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(turtlesim_msgs REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -24,12 +25,17 @@ target_link_libraries(simple_publisher PUBLIC rclcpp::rclcpp ${std_msgs_TARGETS}
 add_executable(turtlesim_publisher src/turtlesim_publisher.cpp)
 target_link_libraries(turtlesim_publisher PUBLIC rclcpp::rclcpp ${std_msgs_TARGETS} 
 	                                                        ${geometry_msgs_TARGETS})
+add_executable(turtlesim_subscriber src/turtlesim_subscriber.cpp)
+target_link_libraries(turtlesim_subscriber PUBLIC rclcpp::rclcpp ${std_msgs_TARGETS} 
+								 ${geometry_msgs_TARGETS}
+								 ${turtlesim_msgs_TARGETS})
 
 # add name of each executable to list of targets
 install(TARGETS 
 	hello_world
 	simple_publisher
-	turtlesim_publisher	
+	turtlesim_publisher
+	turtlesim_subscriber	
   DESTINATION lib/${PROJECT_NAME})
 
 

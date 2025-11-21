@@ -1,8 +1,6 @@
-// turtlesim_publisher.cpp - creates a ros2 node and publishes a twist cmd_vel topic
+// turtlesim_publisher.cpp - creates a ros2 node and publishes a geometry_msgs twist topic
 // Tristan Hill, ros2_workshop
-// September 25, 2025
-// run with the following:
-// ` ros2 run ros2_workshop turtlesim_publisher --remap /cmd_vel:=/turtle1/cmd_vel `
+// October 02, 2025
  
 #include <chrono>
 #include <memory>
@@ -12,7 +10,6 @@
 #include "std_msgs/msg/string.hpp"
 #include "geometry_msgs/msg/twist.hpp"
 
-
 int main(int argc, char * argv[])
 {
   // initialize ros2 node		
@@ -21,21 +18,21 @@ int main(int argc, char * argv[])
   rclcpp::Node::SharedPtr node = rclcpp::Node::make_shared("turtlesim_publisher", options);
 
   // initialize publisher 
-  auto pub = node->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
-  geometry_msgs::msg::Twist msg; // msg object to publish 
+  auto pub = node->create_publisher<geometry_msgs::msg::Twist>("/turtle1/cmd_vel", 10);
+  //std_msgs::msg::String msg; // msg object to publish 
+  geometry_msgs::msg::Twist msg;
   std::stringstream str;     
 
   int cnt=0;
   rclcpp::WallRate loop_rate(50);
   while (rclcpp::ok()) {
 	
-
 	// format string with stringstream	  
   	str<<"main() loop cnt: "<<cnt<<std::endl;
-	//str<<"Twist x:	<<
 	std::cout<<str.str(); // print string to terminal
-	msg.linear.x=1;   // put string into msg data
-	msg.angular.z=0.5;  
+	//msg.data=str.str();   // put string into msg data
+	msg.linear.x=10;
+	msg.angular.z=0.4;
 	pub->publish(msg);    // publish message
 
 	rclcpp::spin_some(node); // spin ros2
